@@ -14,9 +14,13 @@ public Set<String> solve(String input)
 
 ### CountMap
 A map data structure computed from a single word input.
+
+
 Tells you how many times a character occurred in a word.
 
 Key = Character
+
+
 Value = Integer representing how many times that Key occurred in the input string.
 
 ### Wordlist
