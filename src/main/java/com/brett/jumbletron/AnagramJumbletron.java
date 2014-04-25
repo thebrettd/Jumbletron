@@ -7,13 +7,17 @@ import java.util.*;
 
 /**
  * Created by brett on 4/24/14.
+ *
+ * Todo: fix npe bug on inputs of 'tests'
+ *
  */
 public class AnagramJumbletron extends AbstractJumbletron {
 
     private Map<String, List<String>> anagramDictionary;
 
     public AnagramJumbletron(){
-        anagramDictionary = populateDictionary();
+        anagramDictionary = new HashMap<String, List<String>>();
+        populateDictionary();
     }
 
     /***

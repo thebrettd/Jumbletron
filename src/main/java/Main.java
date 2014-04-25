@@ -1,4 +1,5 @@
 import com.brett.jumbletron.AnagramJumbletron;
+import com.brett.jumbletron.CharacterCountJumbletron;
 import com.brett.jumbletron.Jumbletron;
 
 import java.io.BufferedReader;
@@ -13,7 +14,7 @@ public class Main {
         System.out.println("Welcome to Jumbletron. ");
 
         System.out.println("Please wait while Jumbletron initializes");
-        Jumbletron j = new AnagramJumbletron();
+        Jumbletron j = new CharacterCountJumbletron();
         System.out.println("Jumbletron intialized");
 
         while (true) {
