@@ -3,6 +3,15 @@ Jumbletron
 
 # Glossary
 
+jumbletron is a command line program for solving word jumbles.
+
+Given a word as input, it will print out all known words which can be created using any or all of the characters from
+that input word.
+
+Code is included for 2 different algorithms, but the program currently will only execute the second algorithm, which
+performed better for longer input strings.
+
+
 ### Jumbletron
 An Interface for objects which can solve word jumbles. Input is a dictionary of valid words.
 
