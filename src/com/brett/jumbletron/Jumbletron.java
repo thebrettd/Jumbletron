@@ -1,10 +1,9 @@
 package com.brett.jumbletron;
 
+import com.brett.utilities.Permutations;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -60,4 +59,12 @@ public class Jumbletron {
     }
 
 
+    public Set<String> solve(String input) {
+        Set<String> matchingWords = new HashSet<String>();
+        Set<String> combinations = Permutations.getPermutations(input);
+        for (String permutation : combinations) {
+            matchingWords.addAll(this.getWords(permutation));
+        }
+        return matchingWords;
+    }
 }

@@ -41,12 +41,7 @@ public class Main {
             quit();
         }
 
-        Set<String> matchingWords = new HashSet<String>();
-
-        Set<String> combinations = Permutations.getPermutations(input);
-        for (String permutation : combinations) {
-            matchingWords.addAll(j.getWords(permutation));
-        }
+        Set<String> matchingWords = j.solve(input);
 
         if (matchingWords.size() > 0) {
             System.out.println(String.format("Found %s following words: ", matchingWords.size()));
