@@ -14,9 +14,7 @@ import java.util.Map;
 public abstract class AbstractJumbletron implements Jumbletron {
     /***
      * Iterate through each word in the dictionary file.
-     * Compute the CountMap for each word.
-     *
-     * If the same CountMap has already been seen, we know it is anagram of other words, add it to the anagram list.
+     * Apply some precomputation algorithm..
      *
      * @return
      */

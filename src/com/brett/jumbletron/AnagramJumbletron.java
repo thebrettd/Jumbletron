@@ -17,6 +17,14 @@ public class AnagramJumbletron extends AbstractJumbletron {
         anagramDictionary = populateDictionary();
     }
 
+    /***
+     *Compute the CountMap for each word.
+     *
+     * If the same CountMap has already been seen then we know it is anagram
+     * of other words, add it to the anagram list.
+     *
+     * @param currWord
+     */
     @Override
     protected void processDictionaryWord(String currWord) {
         CountMap countMap = new CountMap(currWord);
