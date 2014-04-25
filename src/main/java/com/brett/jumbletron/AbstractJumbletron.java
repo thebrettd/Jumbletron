@@ -20,7 +20,7 @@ public abstract class AbstractJumbletron implements Jumbletron {
      */
     protected Map<String, List<String>> populateDictionary() {
         HashMap<String, List<String>> anagramDict = new HashMap<String, List<String>>();
-        InputStream resourceAsStream = this.getClass().getResourceAsStream("words.out");
+        InputStream resourceAsStream = this.getClass().getResourceAsStream("com/brett/jumbletron/words.out");
         InputStreamReader reader = new InputStreamReader(resourceAsStream);
         BufferedReader br = new BufferedReader(reader);
 

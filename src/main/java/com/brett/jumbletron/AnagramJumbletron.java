@@ -1,8 +1,7 @@
 package com.brett.jumbletron;
 
-import com.brett.utilities.Permutations;
+import com.brett.utilities.*;
 
-import java.io.*;
 import java.util.*;
 
 

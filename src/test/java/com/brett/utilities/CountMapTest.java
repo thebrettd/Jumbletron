@@ -1,4 +1,4 @@
-package com.brett.jumbletron;
+package com.brett.utilities;
 
 import org.junit.Test;
 
