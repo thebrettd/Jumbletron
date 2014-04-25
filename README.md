@@ -27,6 +27,12 @@ This ensures strings with the same characters in different order produce a Count
 
 Words list provided by http://wordlist.sourceforge.net/
 
+I generated the words list using the following parameters:
+
+Category: american
+Size: 95 (insane)
+Variants: 2
+
 ./mk-list -v2 american 95 > words.out
 
 # Algorithms
