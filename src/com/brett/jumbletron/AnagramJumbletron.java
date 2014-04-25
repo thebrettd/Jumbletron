@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * Created by brett on 4/24/14.
  */
-public class AnagramJumbletron implements Jumbletron {
+public class AnagramJumbletron extends AbstractJumbletron {
 
     private Map<String, List<String>> anagramDictionary;
 
@@ -17,28 +17,8 @@ public class AnagramJumbletron implements Jumbletron {
         anagramDictionary = populateDictionary();
     }
 
-    private Map<String, List<String>> populateDictionary() {
-        HashMap<String, List<String>> anagramDict = new HashMap<String, List<String>>();
-        InputStream resourceAsStream = this.getClass().getResourceAsStream("words.out");
-        InputStreamReader reader = new InputStreamReader(resourceAsStream);
-        BufferedReader br = new BufferedReader(reader);
-
-        String currWord;
-        try {
-            while ((currWord = br.readLine()) != null) {
-                processDictionaryWord(currWord);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return anagramDict;
-    }
-
-    /***
-     *
-     * @param currWord
-     */
-    private void processDictionaryWord(String currWord) {
+    @Override
+    protected void processDictionaryWord(String currWord) {
         CountMap countMap = new CountMap(currWord);
         List<String> strings;
         if (anagramDictionary.containsKey(countMap.toString())){
