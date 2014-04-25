@@ -1,6 +1,7 @@
 package com.brett.jumbletron;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,21 +30,33 @@ public class Jumbletron {
         String currWord;
         try {
             while ((currWord = br.readLine()) != null) {
-                processWord(currWord);
+                processDictionaryWord(currWord);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
-    private void processWord(String currWord) {
-        //System.out.println(currWord);
+    private void processDictionaryWord(String currWord) {
+        CountMap countMap = new CountMap(currWord);
+        List<String> strings;
+        if (map.containsKey(countMap.toString())){
+            strings = map.get(countMap.toString());
+        }else{
+            strings = new ArrayList<String>();
+        }
+        strings.add(currWord);
+        map.put(countMap.toString(),strings);
     }
 
-    public List<String> getWords(String c){
-        return map.get(c);
+    /***
+     * Given an input word, return all the words that can be by the characters of that word
+     * @param input
+     * @return
+     */
+    public List<String> getWords(String input){
+        CountMap inputCountMap = new CountMap(input);
+        return map.get(inputCountMap.toString());
     }
 
 

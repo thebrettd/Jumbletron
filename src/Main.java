@@ -1,9 +1,11 @@
 import com.brett.jumbletron.Jumbletron;
+import com.brett.utilities.Permutations;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -39,7 +41,22 @@ public class Main {
             quit();
         }
 
-        j.getWords(input);
+        Set<String> matchingWords = new HashSet<String>();
+
+        Set<String> combinations = Permutations.getPermutations(input);
+        for (String permutation : combinations) {
+            matchingWords.addAll(j.getWords(permutation));
+        }
+
+        if (matchingWords.size() > 0) {
+            System.out.println(String.format("Found %s following words: ", matchingWords.size()));
+            for (String word : matchingWords) {
+                System.out.println(word);
+            }
+        } else {
+            System.out.println("No words found! :(");
+        }
+
     }
 
     private static void quit() {
