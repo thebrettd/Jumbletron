@@ -35,6 +35,8 @@ Variants: 2
 
 ./mk-list -v2 american 95 > words.out
 
+In retrospect, this was probably not the best choice as this list contains many unsual one letter words and acronyms
+
 # Algorithms
 
 ### Attempt 1

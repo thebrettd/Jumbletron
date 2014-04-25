@@ -6,10 +6,17 @@ import java.util.*;
 
 /**
  *
- * * Precompute a map. The Key is a letter count, the value is the list of all known words that can be composed using that many letters.
- * Given a string as input, compute the CountMap.
- ** For each entry, fetch all of the words that can be computed using that many letters or fewer
- ** Compute the CountMap of each word in that list. If input word has at least as many occurrences of every character then add it to our result list.
+ * Precompute a map:
+ *  The Key is a letter count
+ *  The value is the list of all known words that can be composed using that many letters.
+ *
+ *  Given a string as input, compute the CountMap for input
+ *  For each character+count in that CountMap:
+ *      fetch all of the words that can be computed using that many letters (or fewer!). These are potential words.
+ *
+ *  For each potential word:
+ *      Compute potentialWordCountMap
+ *      If input word has at least as many occurrences of every character then add it to our result list.
  *
  * Created by brett on 4/25/14.
  */
@@ -40,28 +47,20 @@ public class CharacterCountJumbletron extends AbstractJumbletron {
         }
     }
 
-    /***
-     * * Given a string as input, compute the CountMap.
-     ** For each entry, fetch all of the words that can be computed using that many letters or fewer
-     ** Compute the CountMap of each word in that list. If input word has at least as many occurences of every character then add it to our result list.
-     * @param input
-     * @return
-     */
     @Override
     public Set<String> solve(String input) {
-        Set<String> foundWords = new HashSet<String>();
 
         CountMap inputCountMap = new CountMap(input);
 
-        List<String> potentialWords = new ArrayList<String>();
-        for (Character c: inputCountMap.keySet()){
+        List<String> potentialWords = findPotentialWords(inputCountMap);
 
-            Integer count = inputCountMap.get(c);
-            for (int i=1; i <= count; i++){
-                String charCount = c + count.toString();
-                potentialWords.addAll(wordsByCharacterCount.get(charCount));
-            }
-        }
+        Set<String> foundWords = filterPotentialWords(inputCountMap, potentialWords);
+
+        return foundWords;
+    }
+
+    private Set<String> filterPotentialWords(CountMap inputCountMap, List<String> potentialWords) {
+        Set<String> foundWords = new HashSet<String>();
 
         for(String potentialWord : potentialWords){
             CountMap potentialWordCountMap = new CountMap(potentialWord);
@@ -77,7 +76,18 @@ public class CharacterCountJumbletron extends AbstractJumbletron {
             }
         }
 
-
         return foundWords;
+    }
+
+    private List<String> findPotentialWords(CountMap inputCountMap) {
+        List<String> potentialWords = new ArrayList<String>();
+        for (Character c: inputCountMap.keySet()){
+            Integer count = inputCountMap.get(c);
+            for (int i=1; i <= count; i++){
+                String charCount = c + count.toString();
+                potentialWords.addAll(wordsByCharacterCount.get(charCount));
+            }
+        }
+        return potentialWords;
     }
 }
