@@ -12,8 +12,10 @@ performed better for longer input strings.
 
 # Usage
 
-javac Main.java
-java Main
+* Download the code
+* Navigate to the directory containing Main.java
+* javac Main.java
+* java Main
 
 # Glossary
 
