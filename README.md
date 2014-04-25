@@ -1,7 +1,6 @@
 Jumbletron
 ==========
 
-# Glossary
 
 jumbletron is a command line program for solving word jumbles.
 
@@ -11,9 +10,16 @@ that input word.
 Code is included for 2 different algorithms, but the program currently will only execute the second algorithm, which
 performed better for longer input strings.
 
+# Usage
+
+javac Main.java
+java Main
+
+# Glossary
 
 ### Jumbletron
-An Interface for objects which can solve word jumbles. Input is a dictionary of valid words.
+
+An Interface for objects which can solve word jumbles
 
 public Set<String> solve(String input)
 
