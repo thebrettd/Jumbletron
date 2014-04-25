@@ -38,8 +38,6 @@ public class CharacterCountJumbletron extends AbstractJumbletron {
             strings.add(currWord);
             wordsByCharacterCount.put(charCount,strings);
         }
-
-
     }
 
     /***

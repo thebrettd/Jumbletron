@@ -5,7 +5,7 @@ import java.util.TreeMap;
 /**
  * Simple wrapper class. Given a String, compute a map of frequencies of each character
  *
- * Use of tree map is used so that iteration on keys is done in alphabetical order.
+ * A tree map is used so that iteration on keys is done in alphabetical order.
  * This ensures strings with the same characters in different order produce a CountMap with the same toString
  *
  */
