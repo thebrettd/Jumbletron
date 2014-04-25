@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Created by brett on 4/24/14.
  *
- * Todo: fix npe bug on inputs of 'tests'
+ * Todo: fix npe bug on inputs of 'tests'?
  *
  */
 public class AnagramJumbletron extends AbstractJumbletron {
@@ -17,7 +17,7 @@ public class AnagramJumbletron extends AbstractJumbletron {
 
     public AnagramJumbletron(){
         anagramDictionary = new HashMap<String, List<String>>();
-        populateDictionary();
+        processDictionary();
     }
 
     /***

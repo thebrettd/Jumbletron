@@ -35,7 +35,7 @@ Variants: 2
 
 ./mk-list -v2 american 95 > words.out
 
-In retrospect, this was probably not the best choice as this list contains many unsual one letter words and acronyms
+In retrospect, this was probably not the best choice as this list contains many unusual one letter words and acronyms
 
 # Algorithms
 
@@ -43,13 +43,13 @@ In retrospect, this was probably not the best choice as this list contains many 
 
 * Pre-compute the anagram of every word in the dictionary.
 * Given a string as input, compute all of the permutations of the input string.
-* For each permutation, fetch all of its angarams from the precomputed list.
+* For each permutation, fetch all of its anagrams from the precomputed list.
 
 This algorithm does not scale well for long input, as the cost of computing all the permutations grows
 
 ### Attempt 2
 
-* Precompute a map. The Key is a letter count, the value is the list of all known words that can be composed using that many letters.
+* Pre-compute a map. The Key is a letter count, the value is the list of all known words that can be composed using that many letters.
 * Given a string as input, compute the CountMap.
     * For each entry, fetch all of the words that can be computed using that many letters or fewer
     * Compute the CountMap of each word in that list. If input word has at least as many occurrences of every character then add it to our result list.

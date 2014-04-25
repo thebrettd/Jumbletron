@@ -26,14 +26,19 @@ public class CharacterCountJumbletron extends AbstractJumbletron {
 
     public CharacterCountJumbletron(){
         wordsByCharacterCount = new HashMap<String, List<String>>();
-        populateDictionary();
+        processDictionary();
     }
 
+    /***
+     *
+     *
+     * @param currWord
+     */
     @Override
     protected void processDictionaryWord(String currWord) {
         CountMap currWordCounts = new CountMap(currWord);
 
-        for ( Character c: currWordCounts.keySet()){
+        for (Character c: currWordCounts.keySet()){
             String charCount = c + currWordCounts.get(c).toString();
 
             List<String> strings;
@@ -59,6 +64,13 @@ public class CharacterCountJumbletron extends AbstractJumbletron {
         return foundWords;
     }
 
+    /***
+     * Remove words if they require more occurrences of some character than are present in the input string
+     *
+     * @param inputCountMap
+     * @param potentialWords
+     * @return
+     */
     private Set<String> filterPotentialWords(CountMap inputCountMap, List<String> potentialWords) {
         Set<String> foundWords = new HashSet<String>();
 
@@ -79,6 +91,13 @@ public class CharacterCountJumbletron extends AbstractJumbletron {
         return foundWords;
     }
 
+    /***
+     * For each character of the input string, find all the words that could be created using that many (or fewer)
+     * occurrences of that character
+     *
+     * @param inputCountMap
+     * @return
+     */
     private List<String> findPotentialWords(CountMap inputCountMap) {
         List<String> potentialWords = new ArrayList<String>();
         for (Character c: inputCountMap.keySet()){

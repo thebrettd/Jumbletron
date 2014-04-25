@@ -14,11 +14,11 @@ import java.util.Map;
 public abstract class AbstractJumbletron implements Jumbletron {
     /***
      * Iterate through each word in the dictionary file.
-     * Apply some precomputation algorithm..
+     * Apply some pre-computation algorithm..
      *
      * @return
      */
-    protected void populateDictionary() {
+    protected void processDictionary() {
         InputStream resourceAsStream = this.getClass().getResourceAsStream("words.out");
         InputStreamReader reader = new InputStreamReader(resourceAsStream);
         BufferedReader br = new BufferedReader(reader);
