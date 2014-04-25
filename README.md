@@ -30,4 +30,6 @@ Words list provided by http://wordlist.sourceforge.net/
 * Compute all of the permutations of the input string.
 * For each permutation, fetch all of its angarams.
 
+This algorithm does not scale well for long input, as the cost of computing all the permutations grows
+
 
