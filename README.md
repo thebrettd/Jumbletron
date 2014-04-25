@@ -4,10 +4,7 @@ Jumbletron
 # Glossary
 
 ### Jumbletron
-An object to solve word jumbles. Input is a dictionary of valid words.
-
-public List<String> getWords(String input)
-
+An Interface for objects which can solve word jumbles. Input is a dictionary of valid words.
 
 public Set<String> solve(String input)
 
