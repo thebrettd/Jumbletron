@@ -35,7 +35,7 @@ public class CountMap extends TreeMap<Character, Integer> {
         StringBuilder b = new StringBuilder();
 
         for(Character c: this.keySet()){
-            b.append(c + this.get(c).toString());
+            b.append(c).append(this.get(c).toString());
         }
         return b.toString();
     }
